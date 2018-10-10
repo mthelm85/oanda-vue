@@ -41,9 +41,9 @@ export default {
         })
         .then((res) => {
           const data = {
-            accounts: res.data
+            accounts: res.data.accounts
           }
-          resolve(accounts)
+          resolve(data)
         })
         .catch((err) => {
           reject(err)
