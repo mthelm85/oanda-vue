@@ -36,7 +36,7 @@ export default {
           method: 'get',
           url: 'https://api-fxtrade.oanda.com/v3/accounts',
           headers: {
-            'Authorization': `Bearer ${oandaAcct.key}`
+            'Authorization': `Bearer ${credentials.key}`
           }
         })
         .then((res) => {
