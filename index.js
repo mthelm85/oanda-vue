@@ -41,7 +41,7 @@ export default {
         })
         .then((res) => {
           const data = {
-            accounts: res.data.accounts
+            accounts: res.data
           }
           resolve(accounts)
         })
