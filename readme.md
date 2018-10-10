@@ -45,10 +45,10 @@ this.$myAccounts()
 
 // Example response:
 
-[ { id: '201-011-3095092-005',
-    mt4AccountID: 1453427,
-    tags: [ 'MT4' ] },
-  { id: '201-011-3095092-006', tags: [] } ]
+accounts: Array(2)
+  0: {id: "999-999-9999999-999", mt4AccountID: 1234567, tags: Array(1)}
+  1: {id: "999-999-9999999-998", tags: Array(0)}
+
 ```
 
 Get candlestick data:
@@ -58,14 +58,15 @@ this.$getCandlesticks(currency_pair, from, to, granularity)
 
 // With actual arguments:
 
-this.$getCandlesticks('EUR_USD', 7, 0, 'M4')
+this.$getCandlesticks('EUR_USD', 10, 0, 'D')
 
 // Example response:
 
-[ { id: '201-011-3095092-005',
-    mt4AccountID: 1453427,
-    tags: [ 'MT4' ] },
-  { id: '201-011-3095092-006', tags: [] } ]
+candles: Array(8)
+  0: {complete: true, volume: 135477, time: "2018-09-30T21:00:00.000000000Z", bid: {…}, ask: {…}}
+  1: {complete: true, volume: 152349, time: "2018-10-01T21:00:00.000000000Z", bid: {…}, ask: {…}}
+  2: {complete: true, volume: 184437, time: "2018-10-02T21:00:00.000000000Z", bid: {…}, ask: {…}}
+  ...
 ```
 
 The first argument, *currency_pair*, should be expressed as a string in the following format: 'CUR1_CUR2'. For example, 'EUR_USD', or 'EUR_GBP'.
@@ -74,7 +75,7 @@ The next two arguments define the period that the candlestick data should cover.
 
 The last argument, *granularity*, determines the period that each individual candlestick should cover. It should be expressed as a string and available options are at http://developer.oanda.com/rest-live-v20/instrument-df/.
 
-The example above will retrieve 4-minute candlesticks for the past 7 days.
+The example above will retrieve full day candlesticks for the past 10 days.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
