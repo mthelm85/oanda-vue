@@ -43,9 +43,10 @@ export default {
           const data = {
             accounts: res.data.accounts
           }
+          resolve(accounts)
         })
         .catch((err) => {
-          console.log(err)
+          reject(err)
         })
       })
     }
