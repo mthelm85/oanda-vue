@@ -38,7 +38,7 @@ methods: {
 }
 ```
 
-## Available Calls
+## Available Methods
 Get a list of accounts:
 ```javascript
 this.$myAccounts()
@@ -79,8 +79,6 @@ The example above will retrieve full day candlesticks for the past 10 days.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
