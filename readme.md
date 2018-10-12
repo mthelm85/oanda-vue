@@ -105,7 +105,7 @@ this.$getOpenPositions()
 
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+This project currently only covers a few of the available Oanda API endpoints. Feel free to submit pull requests to add new methods that cover additional Oanda API endpoints.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
