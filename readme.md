@@ -54,7 +54,7 @@ accounts: Array(2)
 ##### Get candlestick data:
 
 ```javascript
-this.$getCandlesticks('currency_pair', from, to, 'granularity')
+this.$getCandlesticks('currencyPair', from, to, 'granularity')
 
 // With actual arguments:
 
@@ -69,7 +69,7 @@ candles: Array(8)
   ...
 ```
 
-The first argument *currency_pair* should be expressed as a string in the following format: 'CUR1_CUR2'. For example, 'EUR_USD', or 'EUR_GBP'.
+The first argument *currencyPair* should be expressed as a string in the following format: 'CUR1_CUR2'. For example, 'EUR_USD' or 'EUR_GBP'.
 
 The next two arguments define the period that the candlestick data should cover. Both *from* and *to* are integers and they represent the number of days to subtract from today. For example, if you want candlestick data covering the past week, *from* would be 7 and *to* would be 0.
 
@@ -80,7 +80,7 @@ The example above will retrieve full day candlesticks for the past 10 days.
 ##### Get the latest ask/bid prices:
 
 ```javascript
-this.$getLatestPrice('currency_pair')
+this.$getLatestPrice('currencyPair')
 
 // Example response for 'EUR_USD':
 
@@ -102,7 +102,13 @@ this.$accountBalance()
 ```javascript
 this.$getOpenPositions()
 ```
+##### New market order:
 
+```javascript
+this.$newMarketOrder('currencyPair', units, 'timeInForce')
+```
+
+*currencyPair* is the currency pair that you want to trade. *Units* is the number of currency units you want to trade. A positive number will open a long position, a negative number will open a short position. The *timeInForce* argument is a three-letter string that decides how long the order should stay open. Check the Oanda docs for more information: http://developer.oanda.com/rest-live-v20/order-df/#OrderRequest. The default is 'IOC' or which means that the order must be immediately partially filled or cancelled. 
 
 ## Contributing
 This project currently only covers a few of the available Oanda API endpoints. Feel free to submit pull requests to add new methods that cover additional Oanda API endpoints.
